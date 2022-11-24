@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스터피자</title>
+    <style>
+      .swiper-button-next::after,.swiper-button-prev::after{
+        color: #333;
+      }
+      .swiper-pagination>span{
+        background-color: #D4261F;
+      }
+    </style>
+    <!-- 리셋 -->
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
+    <!-- 공통서식 -->
+    <link rel="stylesheet" href="./css/base.css" type="text/css">
+      <!-- 플렉스 슬라이드 서식 -->
+    <link href="./css/swiper.css" rel="stylesheet" type="text/css">
+    <!-- 모바일서식 -->
+    <link rel="stylesheet" href="./css/mobile.css" type="text/css">
+    <!-- pc서식 -->
+    <link rel="stylesheet" href="./css/pc.css" type="text/css">
+    <!-- 테블릿 서식 -->
+    <link rel="stylesheet" href="./css/tablet.css" type="text/css">
+    <!-- 아이콘폰트 주소 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 제이쿼리 소스 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- 스와이퍼 제이쿼리 슬라이드  스크립트 -->
+    <script src="./script/swiper.js"></script>
+
+</head>
+<body>
+    <input type="checkbox"  id="toggle">
+    <!-- 헤더영역 시작 -->
+    <header>
+        <div class="header_inner">
+            <h1>
+                <a href="index.html" title="메인페이지"> 
+                    <img src="../01기초데이터/02이미지/img_logo_PC.png" alt="상단로고">
+                </a>
+            </h1>
+
+            <!-- 오른쪽 상단 로그인 회원가입 내비게이션 -->
+            <nav class="lnb">
+                <ul>
+                    <li><a href="#" title="로그인">로그인</a></li>
+                    <li><a href="#" title="회원가입">회원가입</a></li>
+                </ul>
+            </nav>
+            <!-- 모바일,테블릿 전용 햄버거 메뉴와 로그인아이콘 -->
+            <label for="toggle" class="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </label>
+          </div>
+            <!-- 메인메뉴 -->
+            <nav class="gnb">
+                <label for="toggle"><i class="fas fa-times"></i></label>
+                <ul>
+                    <li class="con0"><label for="sb1"><a href="#" title="주문하기">주문하기</a>
+                        <i class="fa-solid fa-plus"></i>
+                    </label>
+                    <input type="checkbox" id="sb1">
+                        <ul class="sub">
+                            <li><a href="" title="단체주문">단체주문</a></li>
+                            <li><a href="" title="개인주문">개인주문</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="con0"><label for="sb2">
+                        <a href="#" title="메뉴">메뉴</a> <i class="fa-solid fa-plus"></i>
+                    </label>
+                    <input type="checkbox" id="sb2">
+                        <ul class="sub">
+                            <li><a href="" title="피자">피자</a></li>
+                            <li><a href="" title="1인용 피자">1인용 피자</a></li>
+                            <li><a href="" title="특가세트">특가세트</a></li>
+                            <li><a href="" title="샐러드&사이드">샐러드&사이드</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="con0"><label for="sb3">
+                        <a href="#" title="매장">매장</a><i class="fa-solid fa-plus"></i>
+                    </label>
+                    <input type="checkbox" id="sb3">
+                        <ul class="sub">
+                            <li><a href="" title="매장찾기">매장찾기</a></li>
+                            <li><a href="" title="뷔페매장">뷔페매장</a></li>
+                            <li><a href="" title="매장전용메뉴">매장전용메뉴</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="con0"><label for="sb4">
+                      <a href="#" title="이벤트">이벤트</a> <i class="fa-solid fa-plus"></i>
+                    </label>
+                    <input type="checkbox" id="sb4">
+                        <ul class="sub">
+                            <li><a href="" title="신제품소개">신제품소개</a></li>
+                            <li><a href="" title="진행중 이벤트">진행중 이벤트</a></li>
+                            <li><a href="" title="종료된 이벤트">종료된 이벤트</a></li>
+                            <li><a href="" title="할인안내">할인안내</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="con0"><label for="sb5">
+                        <a href="#" title="매장">마이미피</a><i class="fa-solid fa-plus"></i>
+                    </label>
+                    <input type="checkbox" id="sb5">
+                        <ul class="sub">
+                            <li><a href="" title="장바구니">장바구니</a></li>
+                            <li><a href="" title="주문기록">주문기록</a></li>
+                            <li><a href="" title="개인정보">개인정보</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
+    <!-- 메인영역 시작 -->
+    <main>
+        <article class="slide">
+            <!-- 모바일 메인 슬라이더 -->
+              <div class="swiper-container m_slide">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./image/main_banner/main_banner_m.jpg" alt="">
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <img src="./image/main_banner/2_main_mobile.jpg" alt="">
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <img src="./image/main_banner/m_main_banner.jpg" alt="">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img src="./image/main_banner/mainBanner_210524.jpg" alt="">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- pc 메인 슬라이더 -->
+              <div class="swiper-container pc_slide">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../01기초데이터/02이미지/메인베너/main_banner_pc.jpg" alt="">
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <img src="../01기초데이터/02이미지/메인베너/1_main_pc.jpg" alt="">
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <img src="../01기초데이터/02이미지/메인베너/pc_main_banner.jpg" alt="">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img src="../01기초데이터/02이미지/메인베너/mainImg_210524.jpg" alt="">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </article>
+
+        <article class="promotion">
+          <h2>PROMOTION</h2>
+          <div class="swiper-container sub_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../01기초데이터/02이미지/Group 39.png" alt="">
+              </div>
+    
+              <div class="swiper-slide">
+                <img src="../01기초데이터/02이미지/Group 40.png" alt="">
+              </div>
+    
+              <div class="swiper-slide">
+                <img src="../01기초데이터/02이미지/Group 41.png" alt="">
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </article>
+ 
+        <section class="products">
+          <h2>PRODUCTS</h2>
+          <nav></nav>
+          <article>
+            <div class="swiper-container sub2_slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>멕시칸 하바네로 피자세트</div>
+                      <span class="r_color">24,900</span><span class="l_color">29,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>콤비네이션</div>
+                      <span class="r_color">19,900</span><span class="l_color">25,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>미스터트리오</div>
+                      <span class="r_color">29,900</span><span class="l_color">37,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>킹 브레드 쉬림프 골드</div>
+                      <span class="r_color">31,500</span><span class="l_color">37,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>불고기피자</div>
+                      <span class="r_color">19,900</span><span class="l_color">25,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>트러플베지터리안</div>
+                      <span class="r_color">18,500</span><span class="l_color">24,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>새우천왕</div>
+                      <span class="r_color">29,900</span><span class="l_color">37,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>페페로니플러스</div>
+                      <span class="r_color">18,500</span><span class="l_color">24,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>쉬림프골드</div>
+                      <span class="r_color">24,900</span><span class="l_color">37,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>포슬포슬감자피자</div>
+                      <span class="r_color">19,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>스윗고구마피자</div>
+                      <span class="r_color">19,900</span><span class="l_color">25,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>포테이토 골드</div>
+                      <span class="r_color">28,900</span><span class="l_color">36,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>시카고딥</div>
+                      <span class="r_color">20,000</span><span class="l_color">28,000</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>포테이토</div>
+                      <span class="r_color">19,900</span><span class="l_color">25,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                 
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>쥬라기 맥앤치즈 피자</div>
+                      <span class="r_color">27,900</span><span class="l_color">34,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>하와이안스페셜</div>
+                      <span class="r_color">18,500</span><span class="l_color">24,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>짱구의 해산물 피자</div>
+                      <span class="r_color">27,900</span><span class="l_color">34,900</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>하프앤하프</div>
+                      <span class="r_color">29,900</span><span class="l_color">37,900</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <ul>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>찐페퍼로니 피자</div>
+                      <span class="r_color">18,500</span>
+                    </li>
+                    <li>
+                      <img src="./image/pizza/pizza (1).jpg" alt="">
+                      <div>햄벅한 새우</div>
+                      <span class="r_color">29,900</span><span class="l_color">37,900</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </article>
+        </section>
+
+        <article class="event">
+          <a href="#" class="event_m"><img src="../01기초데이터/02이미지/Group 43.png" alt=""></a>
+          <a href="#" class="event_d"><img src="../01기초데이터/02이미지/Group 42.png" alt=""></a>
+          <a href="#" class="event_p"><img src="../01기초데이터/02이미지/Group 44.png" alt=""></a>
+        </article>
+         
+        <article class="sns">
+          <h2>SNS</h2>
+          <ul>
+            <li><a href="#"><span>
+              따봉 미피단들아! <br>
+              8월에도 미스터피자와 함께 해줘서 고마워👍👍 <br>
+              리얼후기 #이벤트는 9월에도 계속된다💖 <br><br>
+              
+              미피 먹고 해시태그 #미스터피자 를 남겨주면 <br>
+              #미피가 직접 찾아갈게!!🍕
+            </span><img src="./image/int1.jpg" alt=""></a></li>
+            <li><a href="#"><span>
+              나 오늘 1+1이다 짱이지…혜택 좀 봐, 대박임🐭 <br>
+(말투 왜이래..) <br><br>
+
+뭘 좋아할 지 몰라서<br>
+호불호없는 클래식 아이템으로만 준비했어<br>
+준비물은 약간의 의지와 발만 있으면 돼👊🦶<br><br>
+
+#포테이토피자<br>
+#불고기피자<br>
+#콤비네이션
+            </span><img src="./image/int2.jpg" alt=""></a></li>
+            <li><a href="#"><span>
+              명절음식 질릴 땐? <br>
+미스터피자로 Go!🍕🍕  <br><br>
+
+어떤 피자를 고를지 고민 된다면 <br>
+가족들 취향 다 들어 있는 피자로 pick!<br><br>
+
+3가지 맛이 한 판에! #미스터트리오<br>
+언제나 옳은 포테이토+쉬림프골드 #하프앤하프<br>
+한 판으로 모두가 햄벅한 #햄벅한새우
+            </span><img src="./image/int3.jpg" alt=""></a></li>
+            <li><a href="#"><span>
+              [#Event] <br>
+미피단에게 미스터피자가 땡기는 순간은???<br>
+같이 미피 먹고싶은 친구도 태그해주면 피자쏜다!!!<br><br>
+
+@@야!! 그때 우리 시험 끝날때마다 가던 미피 셀빠..ㄱ나니?<br>
+그때 우린 푸딩젤리에 미쳤었지..<br><br>
+
+✔️#이벤트 기간: 9/6-9/16<br>
+✔️ 당첨자발표: 9/19<br>
+✔️ 팔로우 & 게시글 좋아요는 필수!<br><br>
+
+*본 이벤트는 인스타그램에서 응모 가능합니다.
+            </span><img src="./image/int4.jpg" alt=""></a></li>
+          </ul>
+        </article>
+
+        <article class="store">
+          <div class="swiper-container sub3_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_2.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (1).jpg" alt="">
+                </a>
+              </div>
+    
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="./image/c/img_store_banner_220119_3.jpg" alt="">
+                  <img src="./image/c/img_store_banner_220119_text (2).jpg" alt="">
+                  </a>
+              </div>
+    
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_4.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (3).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_5.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (4).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_6.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (5).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_7.jpg" alt=""> 
+                <img src="./image/c/img_store_banner_220119_text (6).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220119_8.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (7).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220510.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (8).jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="#">
+                <img src="./image/c/img_store_banner_220801_pc.jpg" alt="">
+                <img src="./image/c/img_store_banner_220119_text (9).jpg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+    </main>
+
+    <!-- 푸터영역 시작 -->
+    <footer>
+      <div>
+        <nav class="nav01">
+          <div>
+          <a href="#" title="">개인정보취급방침</a>
+          <a href="#" title="">이용약관</a>
+          <a href="">가족점 모집</a>
+          <a href="">고객만족센터</a>
+          <a href="">단체주문/상품권</a>
+          </div>
+        </nav>
+      <nav class="icon">
+        <div>
+        <a href="#"><img src="../01기초데이터/03아이콘/sns_blog01.png" alt=""></a>
+        <a href="#"><img src="../01기초데이터/03아이콘/sns_facebook01.png" alt=""></a>
+        <a href="#"><img src="../01기초데이터/03아이콘/sns_instagram01.png" alt=""></a>
+        <a href="#"><img src="../01기초데이터/03아이콘/sns_kakaostory01.png" alt=""></a>
+        <a href="#"><img src="../01기초데이터/03아이콘/sns_youtube01.png" alt=""></a>
+        </div>
+      </nav>
+      </div>
+      <div class="award">
+        <ul>
+          <li><img src="../01기초데이터/03아이콘/img_award_01.jpg" alt="">
+            대한민국 대표 <br>
+          고객만족도 조사 <br>
+          7회 수상 <br>
+          (2007·2009-2014)</li>
+          <li><img src="../01기초데이터/03아이콘/img_award_02.jpg" alt="">
+            좋은기업 대상 <br>
+            9회 연속수상</li>
+          <li><img src="../01기초데이터/03아이콘/img_award_03.jpg" alt="">
+            브랜드스타 <br>
+            12회 연속수상</li>
+          <li><img src="../01기초데이터/03아이콘/img_award_04_210119.jpg" alt="">
+            2021년 <br>
+            세계일류상품 <br>
+            차세대부분수상</li>
+          <li><img src="../01기초데이터/03아이콘/img_award_05.jpg" alt="">
+            세계 피자대회 <br>
+            2019년 2관왕</li>
+        </ul>
+      </div>
+      <address>서울시 서초구 효령로 132
+        대표이사:000   개인정보 관리책임자:000
+        통신판매업:2009-서울서초-1700 사업자등록번호 000-00-0000 <br>
+        Copyright © MP DAESAN. All rights reserved. </address>
+    </footer>
+
+    <script>
+      var swiper = new Swiper(".m_slide", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+      });
+
+      var swiper = new Swiper(".pc_slide", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+      });
+
+      var swiper = new Swiper(".sub_slide", {
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints:{ //레이아웃
+            768:{
+                slidesPerView:2,//레이아웃2
+            },
+            1025:{
+                slidesPerView:3,//레이아웃3
+            }
+        }
+      });
+      
+      var swiper = new Swiper(".sub2_slide", {
+        slidesPerView: 1,
+        loop: true,
+        centeredSlides: false,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints:{ //레이아웃
+            0:{
+                slidesPerView:2
+            },
+            768:{
+                slidesPerView:3,//레이아웃2
+            },
+            1025:{
+                slidesPerView:4,//레이아웃3
+            }
+        }
+      });
+      
+      var swiper = new Swiper(".sub3_slide", {
+        spaceBetween: 30,
+        centeredSlides: false,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        }
+      });
+    </script>
+    
+</body>
+</html>

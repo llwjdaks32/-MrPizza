@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+@media screen and (min-width:768px) and (max-width:1199px) {
+
+    *{margin-right: 0px;}
+    .pc_slide{display: none;}
+    .event_m{display: none;}
+    .event_p{display: none;}
+
+/* 헤더영역 */
+.header_inner{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 0px 3px rgb(63,63,63);
+    background-color: #fff;
+}
+.header_inner h1{
+    text-align: center;
+    margin: 0px auto;
+}
+.header_inner h1 img{
+    height: 45px;
+    padding-top: 6px;
+}
+
+/* 햄버거 메뉴, 유저버튼 위치 지정 */
+.toggle_btn, i.fa-user{
+    position:absolute;
+    top: 19px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.toggle_btn{right: 15px;}
+i.fa-user{left: 15px;}
+
+.gnb{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 100px;
+    background: rgba(77, 77, 77, 0.562);
+    transition: 0.2s;
+    z-index: -1;
+    border-left: 1px solid #ccc;
+    opacity: 0;
+}
+.gnb >label[for="toggle"]{
+    position: absolute;
+    right: -90%;
+    font-size: 2.7rem;
+    top: 17px;
+    cursor: pointer;
+    color: #fff;
+    opacity: 1;
+    transition: 0.1s;
+}
+
+/* 메인메뉴 서식 */
+.gnb >ul {
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    right: -100%;
+    width: 234px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.1s;
+}
+.gnb >ul >li{
+    border-bottom: 1px solid #ccc ;
+    text-indent: 15px;
+}
+
+.gnb >ul >li>label{
+    display: block;
+    line-height: 250%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.gnb li i.fa-plus{
+    float: right;
+    transform: translate(-20px,13px);
+}
+
+/* 상단 lnb메뉴 서식 */
+.lnb{
+    position: fixed;
+    width: 234px;
+    height: 50px;
+    bottom: 0px;
+    right: -100%;
+    z-index: 1001;
+    transition: 0.1s;
+}
+.lnb ul{text-align: center;}
+.lnb ul>li{
+    width: 110px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.lnb ul >li>a{
+    display: block;
+    line-height: 200%;
+    text-transform: uppercase; 
+    border: none;
+    font-size: 1rem;
+}
+/* 서브서식 */
+.sub{
+    display: none;
+}
+.sub >li{
+    border-top:1px solid #ccc ;
+    background-color: rgb(248, 248, 248);
+    font-size: 0.8rem;
+    line-height: 200%;
+}
+
+/* 햄버거 클릭시 gnb, lnb 날라오기 */
+#toggle:checked + header .gnb{z-index: 1000; opacity: 1;}
+#toggle:checked + header .lnb{right: 0px;}
+#toggle:checked + header .gnb>ul{right: 0px; opacity: 1;}
+#toggle:checked + header .gnb >label[for="toggle"]{right: 90%;}
+
+/* 아이콘 클릭시 sub 나오기 */
+
+#sb1:checked + .sub{display: block;}
+#sb2:checked + .sub{display: block;}
+#sb3:checked + .sub{display: block;}
+#sb4:checked + .sub{display: block;}
+#sb5:checked + .sub{display: block;}
+
+.m_slide .swiper-wrapper img{
+    width: 100%;
+}
+.promotion{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.sub_slide{
+    overflow: hidden;
+    width: 100%;
+    padding: 0px 0px 40px;
+}
+.sub_slide .swiper-wrapper .swiper-slide{
+    margin: 0px auto;
+    text-align: center;
+}
+.sub_slide .swiper-wrapper img{
+    width: 60%;
+}
+.products{
+    margin-bottom: 70px;
+}
+.sub2_slide{
+    overflow: hidden;
+    padding: 30px 0px;
+    text-align: center;
+}
+.sub2_slide li:hover{
+    transform: scale(1.1);
+}
+.sub2_slide >.swiper-wrapper{
+    padding-bottom: 30px;
+}
+.sub2_slide li{
+    box-sizing: border-box;
+    width: 90%;
+    height: 10%;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding:20px 0px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.sub2_slide .swiper-wrapper img{
+    border-radius: 20px; 
+    width: 75%;
+}
+.event{
+    position: relative;
+    margin-bottom: 50px;
+}
+.event>p{
+    position: absolute;
+    top: 68%;
+    left: 7%;
+    cursor: pointer;
+}
+.event>p>a:hover{
+    background-color: #fff;
+    color: #c72522;
+}
+.event >p>a{
+    font-size: 18px;
+    border: 1px solid #fff;
+    display: block;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+.event_d img{
+    width: 100%;
+}
+
+.sns{
+    margin: 0px auto;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+.sns>ul{
+}
+.sns>ul>li{
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    width: 43%;
+    position: relative;
+}
+
+.sns span{
+    color: #fff;
+    font-size: 0.8rem;
+    line-height: 27px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.2s;
+    z-index: -1;
+}
+.sns>ul>li>a>img{
+    transition: 0.2s;
+    width: 100%;
+}
+.sns>ul>li>a:hover img{
+    transform: scale(1.2);
+}
+.sns>ul>li>a:hover span{
+    background-color: rgba(51, 51, 51, 0.8);
+    z-index: 1;
+}
+.store{
+    padding: 100px 0px;
+    background-color: #f2f2f2;
+}
+.sub3{width: 100%;}
+.sub3_slide{
+    margin-right:0px ;
+    padding-top: 20px;
+    margin:0px auto;
+    text-align: center;
+}
+.store img{
+    margin: 0px auto;
+    display: inline-block;
+    width: 340px
+}
+
+footer{
+    border-top:1px solid #ccc ;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+footer >div{
+    margin: 0px auto;
+}
+
+footer >div>.icon,.nav01{
+    
+    width: 100%;
+}
+footer >div>.icon>div{
+    margin: auto;
+    width: 100%;
+}
+footer >div>.icon>div>a{
+    padding-left: 15px;
+}
+footer >div >.icon img{
+    padding-right: 10px;
+}
+footer >div >.icon a:first-child img{
+    padding-right: 0px;
+}
+footer >div >.nav01{
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+footer >div >.nav01>div{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    line-height: 50px;
+}
+footer .award{
+    width: 100%;
+    position: relative;
+    padding: 15px 0 10px 0;
+}
+footer .award ul{ display: flex; position: absolute;}
+footer .award ul li{transform: scale(0.8); display: flex; padding-right: 10px;}
+footer .award ul li img{ padding-right: 7px;}
+footer address{
+    width: 100%;
+    padding-top: 60px;
+    margin: 0px auto;
+    line-height: 160%;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: rgb(151, 151, 151);
+}
+}
